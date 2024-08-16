@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BtListaCompletadas = new System.Windows.Forms.Button();
+            this.BtTareasAtrasadas = new System.Windows.Forms.Button();
+            this.BtListPendientes = new System.Windows.Forms.Button();
+            this.BtNuevaTarea = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.BtListTareas = new System.Windows.Forms.Button();
             this.BtTitulo = new System.Windows.Forms.Label();
             this.LbSubtitulo = new System.Windows.Forms.Label();
@@ -63,6 +68,62 @@
             this.panel1.Size = new System.Drawing.Size(205, 450);
             this.panel1.TabIndex = 2;
             // 
+            // BtListaCompletadas
+            // 
+            this.BtListaCompletadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.BtListaCompletadas.Location = new System.Drawing.Point(3, 300);
+            this.BtListaCompletadas.Name = "BtListaCompletadas";
+            this.BtListaCompletadas.Size = new System.Drawing.Size(203, 44);
+            this.BtListaCompletadas.TabIndex = 6;
+            this.BtListaCompletadas.Text = "Completadas";
+            this.BtListaCompletadas.UseVisualStyleBackColor = true;
+            this.BtListaCompletadas.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // BtTareasAtrasadas
+            // 
+            this.BtTareasAtrasadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.BtTareasAtrasadas.Location = new System.Drawing.Point(-1, 250);
+            this.BtTareasAtrasadas.Name = "BtTareasAtrasadas";
+            this.BtTareasAtrasadas.Size = new System.Drawing.Size(203, 44);
+            this.BtTareasAtrasadas.TabIndex = 5;
+            this.BtTareasAtrasadas.Text = "Atrasadas";
+            this.BtTareasAtrasadas.UseVisualStyleBackColor = true;
+            // 
+            // BtListPendientes
+            // 
+            this.BtListPendientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.BtListPendientes.Location = new System.Drawing.Point(0, 200);
+            this.BtListPendientes.Name = "BtListPendientes";
+            this.BtListPendientes.Size = new System.Drawing.Size(203, 44);
+            this.BtListPendientes.TabIndex = 4;
+            this.BtListPendientes.Text = "Pendientes";
+            this.BtListPendientes.UseVisualStyleBackColor = true;
+            // 
+            // BtNuevaTarea
+            // 
+            this.BtNuevaTarea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(0)))), ((int)(((byte)(50)))));
+            this.BtNuevaTarea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtNuevaTarea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.BtNuevaTarea.ForeColor = System.Drawing.Color.White;
+            this.BtNuevaTarea.Location = new System.Drawing.Point(0, 78);
+            this.BtNuevaTarea.Name = "BtNuevaTarea";
+            this.BtNuevaTarea.Size = new System.Drawing.Size(203, 44);
+            this.BtNuevaTarea.TabIndex = 3;
+            this.BtNuevaTarea.Text = "Nueva Tarea";
+            this.BtNuevaTarea.UseVisualStyleBackColor = false;
+            this.BtNuevaTarea.Click += new System.EventHandler(this.BtNuevaTarea_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(73, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 18);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Usuario";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // BtListTareas
             // 
             this.BtListTareas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -72,6 +133,7 @@
             this.BtListTareas.TabIndex = 1;
             this.BtListTareas.Text = "Tareas";
             this.BtListTareas.UseVisualStyleBackColor = true;
+            this.BtListTareas.Click += new System.EventHandler(this.BtListTareas_Click);
             // 
             // BtTitulo
             // 
@@ -97,47 +159,11 @@
             // 
             // BtNuevaTarea
             // 
-            this.BtNuevaTarea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(0)))), ((int)(((byte)(50)))));
-            this.BtNuevaTarea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtNuevaTarea.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.BtNuevaTarea.ForeColor = System.Drawing.Color.White;
-            this.BtNuevaTarea.Location = new System.Drawing.Point(0, 78);
-            this.BtNuevaTarea.Name = "BtNuevaTarea";
-            this.BtNuevaTarea.Size = new System.Drawing.Size(203, 44);
-            this.BtNuevaTarea.TabIndex = 3;
-            this.BtNuevaTarea.Text = "Nueva Tarea";
-            this.BtNuevaTarea.UseVisualStyleBackColor = false;
-            // 
-            // BtListPendientes
-            // 
-            this.BtListPendientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.BtListPendientes.Location = new System.Drawing.Point(0, 200);
-            this.BtListPendientes.Name = "BtListPendientes";
-            this.BtListPendientes.Size = new System.Drawing.Size(203, 44);
-            this.BtListPendientes.TabIndex = 4;
-            this.BtListPendientes.Text = "Pendientes";
-            this.BtListPendientes.UseVisualStyleBackColor = true;
-            // 
-            // BtTareasAtrasadas
-            // 
-            this.BtTareasAtrasadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.BtTareasAtrasadas.Location = new System.Drawing.Point(-1, 250);
-            this.BtTareasAtrasadas.Name = "BtTareasAtrasadas";
-            this.BtTareasAtrasadas.Size = new System.Drawing.Size(203, 44);
-            this.BtTareasAtrasadas.TabIndex = 5;
-            this.BtTareasAtrasadas.Text = "Atrasadas";
-            this.BtTareasAtrasadas.UseVisualStyleBackColor = true;
-            // 
-            // BtListaCompletadas
-            // 
-            this.BtListaCompletadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.BtListaCompletadas.Location = new System.Drawing.Point(3, 300);
-            this.BtListaCompletadas.Name = "BtListaCompletadas";
-            this.BtListaCompletadas.Size = new System.Drawing.Size(203, 44);
-            this.BtListaCompletadas.TabIndex = 6;
-            this.BtListaCompletadas.Text = "Completadas";
-            this.BtListaCompletadas.UseVisualStyleBackColor = true;
-            this.BtListaCompletadas.Click += new System.EventHandler(this.button2_Click);
+            this.idUsuario.AutoSize = true;
+            this.idUsuario.Location = new System.Drawing.Point(225, 422);
+            this.idUsuario.Name = "idUsuario";
+            this.idUsuario.Size = new System.Drawing.Size(0, 16);
+            this.idUsuario.TabIndex = 3;
             // 
             // BtFilter
             // 
@@ -253,6 +279,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
             this.PerformLayout();
 
         }

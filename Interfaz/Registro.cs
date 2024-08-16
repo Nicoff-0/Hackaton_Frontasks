@@ -44,7 +44,7 @@ namespace Hackaton_Frontasks.Interfaz
 
 
 
-                cn = new cConexion(); cmd = new SqlCommand("Select * from tblUsuarios where id_usuario= '" + TbId.Text + "' ", cn.AbrirConexion());
+                cn = new cConexion(); cmd = new SqlCommand("Select * from tblUsuario where id_usuario= '" + TbId.Text + "' ", cn.AbrirConexion());
                 da = new SqlDataAdapter(cmd);
                 dt = new DataTable();
                 da.Fill(dt);//llena dt con consulta cmd
@@ -59,7 +59,7 @@ namespace Hackaton_Frontasks.Interfaz
                 else
                 {
                     cn = new cConexion();
-                    cmd = new SqlCommand("insert into tblUsuarios values ( '" + TbId.Text + "', '" + TbName.Text + "', '" + TbLastName.Text + "', '" + TbMail.Text + "', '" + TbPassword.Text + "')", cn.AbrirConexion());
+                    cmd = new SqlCommand("insert into tblUsuario values ( '" + TbId.Text + "', '" + TbName.Text + "', '" + TbLastName.Text + "', '" + TbMail.Text + "', '" + TbPassword.Text + "')", cn.AbrirConexion());
 
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Usuario creado");

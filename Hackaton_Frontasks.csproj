@@ -59,6 +59,12 @@
     <Compile Include="Interfaz\LoginPane.Designer.cs">
       <DependentUpon>LoginPane.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\NuevaTarea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\NuevaTarea.Designer.cs">
+      <DependentUpon>NuevaTarea.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\Registro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Interfaz\LoginPane.resx">
       <DependentUpon>LoginPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\NuevaTarea.resx">
+      <DependentUpon>NuevaTarea.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>

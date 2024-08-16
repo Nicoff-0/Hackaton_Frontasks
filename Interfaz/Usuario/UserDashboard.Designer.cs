@@ -1,4 +1,6 @@
-﻿namespace Hackaton_Frontasks.Interfaz.Usuario
+﻿using System.Windows.Forms;
+
+namespace Hackaton_Frontasks.Interfaz.Usuario
 {
     partial class UserDashboard
     {
@@ -32,15 +34,11 @@
             this.BtListaCompletadas = new System.Windows.Forms.Button();
             this.BtTareasAtrasadas = new System.Windows.Forms.Button();
             this.BtListPendientes = new System.Windows.Forms.Button();
-            this.BtNuevaTarea = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.BtListTareas = new System.Windows.Forms.Button();
             this.BtTitulo = new System.Windows.Forms.Label();
             this.LbSubtitulo = new System.Windows.Forms.Label();
             this.BtNuevaTarea = new System.Windows.Forms.Button();
-            this.BtListPendientes = new System.Windows.Forms.Button();
-            this.BtTareasAtrasadas = new System.Windows.Forms.Button();
-            this.BtListaCompletadas = new System.Windows.Forms.Button();
             this.BtFilter = new System.Windows.Forms.Button();
             this.BtEtiquetar = new System.Windows.Forms.Button();
             this.BtBorrar = new System.Windows.Forms.Button();
@@ -159,11 +157,11 @@
             // 
             // BtNuevaTarea
             // 
-            this.idUsuario.AutoSize = true;
-            this.idUsuario.Location = new System.Drawing.Point(225, 422);
-            this.idUsuario.Name = "idUsuario";
-            this.idUsuario.Size = new System.Drawing.Size(0, 16);
-            this.idUsuario.TabIndex = 3;
+            this.BtNuevaTarea.AutoSize = true;
+            this.BtNuevaTarea.Location = new System.Drawing.Point(225, 422);
+            this.BtNuevaTarea.Name = "idUsuario";
+            this.BtNuevaTarea.Size = new System.Drawing.Size(0, 16);
+            this.BtNuevaTarea.TabIndex = 3;
             // 
             // BtFilter
             // 
@@ -288,6 +286,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button BtNuevaTarea;
+        private Label label1;
         private System.Windows.Forms.Label LbSubtitulo;
         private System.Windows.Forms.Button BtListTareas;
         private System.Windows.Forms.Label BtTitulo;
@@ -303,5 +302,6 @@
         private System.Windows.Forms.Button BtConfig;
         private System.Windows.Forms.TextBox TfBusqueda;
         private System.Windows.Forms.Label LbTituloLista;
+        private object idUsuario;
     }
 }

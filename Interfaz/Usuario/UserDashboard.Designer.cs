@@ -30,13 +30,23 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.BtListTareas = new System.Windows.Forms.Button();
-            this.t = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.BtTitulo = new System.Windows.Forms.Label();
+            this.LbSubtitulo = new System.Windows.Forms.Label();
             this.BtNuevaTarea = new System.Windows.Forms.Button();
             this.BtListPendientes = new System.Windows.Forms.Button();
             this.BtTareasAtrasadas = new System.Windows.Forms.Button();
             this.BtListaCompletadas = new System.Windows.Forms.Button();
+            this.BtFilter = new System.Windows.Forms.Button();
+            this.BtEtiquetar = new System.Windows.Forms.Button();
+            this.BtBorrar = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.BtConfig = new System.Windows.Forms.Button();
+            this.BtTema = new System.Windows.Forms.Button();
+            this.BtCerrarSesion = new System.Windows.Forms.Button();
+            this.TfBusqueda = new System.Windows.Forms.TextBox();
+            this.LbTituloLista = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -45,9 +55,9 @@
             this.panel1.Controls.Add(this.BtTareasAtrasadas);
             this.panel1.Controls.Add(this.BtListPendientes);
             this.panel1.Controls.Add(this.BtNuevaTarea);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.LbSubtitulo);
             this.panel1.Controls.Add(this.BtListTareas);
-            this.panel1.Controls.Add(this.t);
+            this.panel1.Controls.Add(this.BtTitulo);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(205, 450);
@@ -63,27 +73,27 @@
             this.BtListTareas.Text = "Tareas";
             this.BtListTareas.UseVisualStyleBackColor = true;
             // 
-            // t
+            // BtTitulo
             // 
-            this.t.AutoSize = true;
-            this.t.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F);
-            this.t.Location = new System.Drawing.Point(59, 9);
-            this.t.Name = "t";
-            this.t.Size = new System.Drawing.Size(87, 26);
-            this.t.TabIndex = 0;
-            this.t.Text = "Usuario";
-            this.t.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BtTitulo.AutoSize = true;
+            this.BtTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.8F);
+            this.BtTitulo.Location = new System.Drawing.Point(59, 9);
+            this.BtTitulo.Name = "BtTitulo";
+            this.BtTitulo.Size = new System.Drawing.Size(87, 26);
+            this.BtTitulo.TabIndex = 0;
+            this.BtTitulo.Text = "Usuario";
+            this.BtTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // LbSubtitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(73, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 18);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Usuario";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LbSubtitulo.AutoSize = true;
+            this.LbSubtitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbSubtitulo.Location = new System.Drawing.Point(73, 44);
+            this.LbSubtitulo.Name = "LbSubtitulo";
+            this.LbSubtitulo.Size = new System.Drawing.Size(60, 18);
+            this.LbSubtitulo.TabIndex = 2;
+            this.LbSubtitulo.Text = "Usuario";
+            this.LbSubtitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BtNuevaTarea
             // 
@@ -129,17 +139,121 @@
             this.BtListaCompletadas.UseVisualStyleBackColor = true;
             this.BtListaCompletadas.Click += new System.EventHandler(this.button2_Click);
             // 
+            // BtFilter
+            // 
+            this.BtFilter.Location = new System.Drawing.Point(3, 3);
+            this.BtFilter.Name = "BtFilter";
+            this.BtFilter.Size = new System.Drawing.Size(102, 27);
+            this.BtFilter.TabIndex = 3;
+            this.BtFilter.Text = "Filtrar";
+            this.BtFilter.UseVisualStyleBackColor = true;
+            // 
+            // BtEtiquetar
+            // 
+            this.BtEtiquetar.Enabled = false;
+            this.BtEtiquetar.Location = new System.Drawing.Point(111, 3);
+            this.BtEtiquetar.Name = "BtEtiquetar";
+            this.BtEtiquetar.Size = new System.Drawing.Size(102, 27);
+            this.BtEtiquetar.TabIndex = 4;
+            this.BtEtiquetar.Text = "Etiquetar";
+            this.BtEtiquetar.UseVisualStyleBackColor = true;
+            // 
+            // BtBorrar
+            // 
+            this.BtBorrar.Enabled = false;
+            this.BtBorrar.Location = new System.Drawing.Point(475, 3);
+            this.BtBorrar.Name = "BtBorrar";
+            this.BtBorrar.Size = new System.Drawing.Size(102, 27);
+            this.BtBorrar.TabIndex = 5;
+            this.BtBorrar.Text = "Borrar";
+            this.BtBorrar.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.BtFilter);
+            this.panel2.Controls.Add(this.BtBorrar);
+            this.panel2.Controls.Add(this.BtEtiquetar);
+            this.panel2.Location = new System.Drawing.Point(206, 414);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(593, 36);
+            this.panel2.TabIndex = 6;
+            // 
+            // BtConfig
+            // 
+            this.BtConfig.BackgroundImage = global::Hackaton_Frontasks.Properties.Resources.setting_2;
+            this.BtConfig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtConfig.Enabled = false;
+            this.BtConfig.FlatAppearance.BorderSize = 0;
+            this.BtConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtConfig.Location = new System.Drawing.Point(675, 9);
+            this.BtConfig.Name = "BtConfig";
+            this.BtConfig.Size = new System.Drawing.Size(32, 32);
+            this.BtConfig.TabIndex = 9;
+            this.BtConfig.UseVisualStyleBackColor = true;
+            // 
+            // BtTema
+            // 
+            this.BtTema.BackgroundImage = global::Hackaton_Frontasks.Properties.Resources.sun_1;
+            this.BtTema.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtTema.FlatAppearance.BorderSize = 0;
+            this.BtTema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtTema.Location = new System.Drawing.Point(713, 9);
+            this.BtTema.Name = "BtTema";
+            this.BtTema.Size = new System.Drawing.Size(32, 32);
+            this.BtTema.TabIndex = 8;
+            this.BtTema.UseVisualStyleBackColor = true;
+            this.BtTema.Click += new System.EventHandler(this.BtTema_Click);
+            // 
+            // BtCerrarSesion
+            // 
+            this.BtCerrarSesion.BackgroundImage = global::Hackaton_Frontasks.Properties.Resources.logout_1;
+            this.BtCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtCerrarSesion.FlatAppearance.BorderSize = 0;
+            this.BtCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtCerrarSesion.Location = new System.Drawing.Point(751, 9);
+            this.BtCerrarSesion.Name = "BtCerrarSesion";
+            this.BtCerrarSesion.Size = new System.Drawing.Size(32, 32);
+            this.BtCerrarSesion.TabIndex = 7;
+            this.BtCerrarSesion.UseVisualStyleBackColor = true;
+            // 
+            // TfBusqueda
+            // 
+            this.TfBusqueda.Location = new System.Drawing.Point(375, 12);
+            this.TfBusqueda.Name = "TfBusqueda";
+            this.TfBusqueda.Size = new System.Drawing.Size(270, 22);
+            this.TfBusqueda.TabIndex = 10;
+            this.TfBusqueda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // LbTituloLista
+            // 
+            this.LbTituloLista.AutoSize = true;
+            this.LbTituloLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.LbTituloLista.Location = new System.Drawing.Point(211, 9);
+            this.LbTituloLista.Name = "LbTituloLista";
+            this.LbTituloLista.Size = new System.Drawing.Size(139, 25);
+            this.LbTituloLista.TabIndex = 11;
+            this.LbTituloLista.Text = "Lista de tareas";
+            // 
             // UserDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.LbTituloLista);
+            this.Controls.Add(this.TfBusqueda);
+            this.Controls.Add(this.BtConfig);
+            this.Controls.Add(this.BtTema);
+            this.Controls.Add(this.BtCerrarSesion);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "UserDashboard";
             this.Text = "UserDashboard";
+            this.Load += new System.EventHandler(this.UserDashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -147,11 +261,20 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button BtNuevaTarea;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label LbSubtitulo;
         private System.Windows.Forms.Button BtListTareas;
-        private System.Windows.Forms.Label t;
+        private System.Windows.Forms.Label BtTitulo;
         private System.Windows.Forms.Button BtListPendientes;
         private System.Windows.Forms.Button BtListaCompletadas;
         private System.Windows.Forms.Button BtTareasAtrasadas;
+        private System.Windows.Forms.Button BtFilter;
+        private System.Windows.Forms.Button BtEtiquetar;
+        private System.Windows.Forms.Button BtBorrar;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button BtCerrarSesion;
+        private System.Windows.Forms.Button BtTema;
+        private System.Windows.Forms.Button BtConfig;
+        private System.Windows.Forms.TextBox TfBusqueda;
+        private System.Windows.Forms.Label LbTituloLista;
     }
 }

@@ -21,5 +21,34 @@ namespace Hackaton_Frontasks.Interfaz.Usuario
         {
 
         }
+
+        private void UserDashboard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtTema_Click(object sender, EventArgs e)
+        {
+            ApplyTheme(this);
+        }
+        public static Color LabelColor { get; set; } = Color.Black;
+        public static Color BackgroundColor { get; set; } = Color.White;
+        public static void ApplyTheme(Control control)
+    {
+        foreach (Control c in control.Controls)
+        {
+            if (c is Label)
+            {
+                c.ForeColor = LabelColor;
+            }
+            c.BackColor = BackgroundColor;
+
+            // Recursively apply to child controls
+            if (c.HasChildren)
+            {
+                ApplyTheme(c);
+            }
+        }
+    }
     }
 }

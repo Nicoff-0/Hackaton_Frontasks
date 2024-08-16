@@ -42,7 +42,7 @@ namespace Hackaton_Frontasks.Interfaz
             else
             {
 
-
+               
 
                 cn = new cConexion(); cmd = new SqlCommand("Select * from tblUsuario where id_usuario= '" + TbId.Text + "' ", cn.AbrirConexion());
                 da = new SqlDataAdapter(cmd);

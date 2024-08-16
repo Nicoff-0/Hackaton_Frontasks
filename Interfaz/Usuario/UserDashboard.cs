@@ -21,5 +21,19 @@ namespace Hackaton_Frontasks.Interfaz.Usuario
         {
 
         }
+
+        private void BtListTareas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtNuevaTarea_Click(object sender, EventArgs e)
+        {
+            NuevaTarea frm = new NuevaTarea();
+            frm.IdUsuario.Text = idUsuario.Text;
+
+            frm.Show();
+            this.Hide();
+        }
     }
 }

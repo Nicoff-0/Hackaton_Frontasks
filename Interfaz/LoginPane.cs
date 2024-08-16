@@ -1,4 +1,5 @@
 ﻿using Hackaton_Frontasks.Clases;
+using Hackaton_Frontasks.Interfaz.Admin;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,7 +34,7 @@ namespace Hackaton_Frontasks.Interfaz
         {
             cn = new cConexion();
 
-            cmd = new SqlCommand("select * from tblUsuario where id_usuario= '" + TbUser.Text + "' and contrseña= '" + TbPassword.Text + "'", cn.AbrirConexion());
+            cmd = new SqlCommand("select * from tblUsuario where id_usuario= '" + TbUser.Text + "' and contraseña= '" + TbPassword.Text + "'", cn.AbrirConexion());
             da = new SqlDataAdapter(cmd);
             dt = new DataTable();
             da.Fill(dt);
@@ -58,15 +59,19 @@ namespace Hackaton_Frontasks.Interfaz
             {
                 if (TbUser.Text == "1")
                 {
-                    AdminDashboard frm3 = new AdminDashboard();
+
+
+                    Admin.AdminDashboard frm3 = new AdminDashboard();
+                    
                     frm3.Show();
                     this.Hide();
                 }
                 else
                 {
 
-
-                    UserDashboard frm = new UserDashboard();
+                    Usuario.UserDashboard frm = new Usuario.UserDashboard();
+                    
+                    frm.idUsuario.Text = TbUser.Text;
                     
 
 

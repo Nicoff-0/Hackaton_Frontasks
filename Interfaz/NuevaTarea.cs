@@ -34,15 +34,24 @@ namespace Hackaton_Frontasks.Interfaz
         {
 
             DateTime now = DateTime.Now;
-            
+            DateTime fin = DtpFechaFin.Value;
 
             cn = new cConexion();
-            cmd = new SqlCommand("insert into tblTareas values ( '" + TbTitulo.Text + "', '" + TbTitulo.Text + "', '" + TbDescripcion.Text + "', '" + CbEstado.Text + "', '" + DtpFechaFin.Value + "', '" + CbPrioridad.Text + "', '" + now + "', '"  + txtId.Text + "')", cn.AbrirConexion());
+            cmd = new SqlCommand("INSERT INTO tblTareas (titulo, descripcion, estado, fecha_fin, prioridad, ultima_modificacion, id_usuario) " +
+                                 "VALUES (@Titulo, @Descripcion, @Estado, @FechaFin, @Prioridad, @UltimaModificacion, @IdUsuario)", cn.AbrirConexion());
 
-            cmd.ExecuteNonQuery();
+            // Definir los parámetros y asignar valores
+            cmd.Parameters.AddWithValue("@Titulo", TbTitulo.Text);
+            cmd.Parameters.AddWithValue("@Descripcion", TbDescripcion.Text);
+            cmd.Parameters.AddWithValue("@Estado", CbEstado.Text);
+            cmd.Parameters.AddWithValue("@FechaFin", fin); // Tipo DateTime
+            cmd.Parameters.AddWithValue("@Prioridad", CbPrioridad.Text);
+            cmd.Parameters.AddWithValue("@UltimaModificacion", now); // Tipo DateTime
+            cmd.Parameters.AddWithValue("@IdUsuario", IdUsuario.Text);
 
-            MessageBox.Show("Vehiculo inscrito");
+            MessageBox.Show("Tarea Creada");
 
+            int filasAfectadas = cmd.ExecuteNonQuery();
 
         }
 

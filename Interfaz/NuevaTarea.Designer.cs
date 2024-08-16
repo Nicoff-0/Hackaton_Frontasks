@@ -42,6 +42,7 @@
             this.DtpFechaFin = new System.Windows.Forms.DateTimePicker();
             this.BtAceptar = new System.Windows.Forms.Button();
             this.BtSubtarea = new System.Windows.Forms.Button();
+            this.IdUsuario = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -160,11 +161,20 @@
             this.BtSubtarea.Text = "Subtareas";
             this.BtSubtarea.UseVisualStyleBackColor = true;
             // 
+            // IdUsuario
+            // 
+            this.IdUsuario.AutoSize = true;
+            this.IdUsuario.Location = new System.Drawing.Point(661, 469);
+            this.IdUsuario.Name = "IdUsuario";
+            this.IdUsuario.Size = new System.Drawing.Size(0, 16);
+            this.IdUsuario.TabIndex = 12;
+            // 
             // NuevaTarea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(790, 509);
+            this.Controls.Add(this.IdUsuario);
             this.Controls.Add(this.BtSubtarea);
             this.Controls.Add(this.BtAceptar);
             this.Controls.Add(this.DtpFechaFin);
@@ -200,5 +210,6 @@
         private System.Windows.Forms.DateTimePicker DtpFechaFin;
         private System.Windows.Forms.Button BtAceptar;
         private System.Windows.Forms.Button BtSubtarea;
+        public System.Windows.Forms.Label IdUsuario;
     }
 }

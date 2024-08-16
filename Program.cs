@@ -17,7 +17,7 @@ namespace Hackaton_Frontasks
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Registro());
+            Application.Run(new NuevaTarea());
         }
     }
 }

@@ -53,6 +53,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\Admin\AdminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Admin\AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\LoginPane.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,13 +71,34 @@
     <Compile Include="Interfaz\Registro.Designer.cs">
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\Usuario\HistoryTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Usuario\HistoryTask.Designer.cs">
+      <DependentUpon>HistoryTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\Usuario\UserDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Usuario\UserDashboard.Designer.cs">
+      <DependentUpon>UserDashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Interfaz\Admin\AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\LoginPane.resx">
       <DependentUpon>LoginPane.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Usuario\HistoryTask.resx">
+      <DependentUpon>HistoryTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Usuario\UserDashboard.resx">
+      <DependentUpon>UserDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -98,6 +125,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ImgLogoFront.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout-1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

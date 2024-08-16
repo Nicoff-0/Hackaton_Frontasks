@@ -36,20 +36,19 @@ namespace Hackaton_Frontasks.Interfaz.Usuario
             this.BtListPendientes = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.BtListTareas = new System.Windows.Forms.Button();
-            this.BtTitulo = new System.Windows.Forms.Label();
-            this.LbSubtitulo = new System.Windows.Forms.Label();
-            this.BtNuevaTarea = new System.Windows.Forms.Button();
-            this.BtFilter = new System.Windows.Forms.Button();
-            this.BtEtiquetar = new System.Windows.Forms.Button();
-            this.BtBorrar = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.BtConfig = new System.Windows.Forms.Button();
-            this.BtTema = new System.Windows.Forms.Button();
-            this.BtCerrarSesion = new System.Windows.Forms.Button();
-            this.TfBusqueda = new System.Windows.Forms.TextBox();
-            this.LbTituloLista = new System.Windows.Forms.Label();
+            this.t = new System.Windows.Forms.Label();
+            this.idUsuario = new System.Windows.Forms.Label();
+            this.dgvTareas = new System.Windows.Forms.DataGridView();
+            this.BtCompletar = new System.Windows.Forms.Button();
+            this.IdTarea = new System.Windows.Forms.Label();
+            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha_Fin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prioridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ultima_Modificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -86,6 +85,7 @@ namespace Hackaton_Frontasks.Interfaz.Usuario
             this.BtTareasAtrasadas.TabIndex = 5;
             this.BtTareasAtrasadas.Text = "Atrasadas";
             this.BtTareasAtrasadas.UseVisualStyleBackColor = true;
+            this.BtTareasAtrasadas.Click += new System.EventHandler(this.BtTareasAtrasadas_Click);
             // 
             // BtListPendientes
             // 
@@ -96,6 +96,7 @@ namespace Hackaton_Frontasks.Interfaz.Usuario
             this.BtListPendientes.TabIndex = 4;
             this.BtListPendientes.Text = "Pendientes";
             this.BtListPendientes.UseVisualStyleBackColor = true;
+            this.BtListPendientes.Click += new System.EventHandler(this.BtListPendientes_Click);
             // 
             // BtNuevaTarea
             // 
@@ -157,125 +158,108 @@ namespace Hackaton_Frontasks.Interfaz.Usuario
             // 
             // BtNuevaTarea
             // 
-            this.BtNuevaTarea.AutoSize = true;
-            this.BtNuevaTarea.Location = new System.Drawing.Point(225, 422);
-            this.BtNuevaTarea.Name = "idUsuario";
-            this.BtNuevaTarea.Size = new System.Drawing.Size(0, 16);
-            this.BtNuevaTarea.TabIndex = 3;
+            this.idUsuario.AutoSize = true;
+            this.idUsuario.Location = new System.Drawing.Point(225, 422);
+            this.idUsuario.Name = "idUsuario";
+            this.idUsuario.Size = new System.Drawing.Size(0, 16);
+            this.idUsuario.TabIndex = 3;
             // 
-            // BtFilter
+            // dgvTareas
             // 
-            this.BtFilter.Location = new System.Drawing.Point(3, 3);
-            this.BtFilter.Name = "BtFilter";
-            this.BtFilter.Size = new System.Drawing.Size(102, 27);
-            this.BtFilter.TabIndex = 3;
-            this.BtFilter.Text = "Filtrar";
-            this.BtFilter.UseVisualStyleBackColor = true;
+            this.dgvTareas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTareas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Titulo,
+            this.Estado,
+            this.Fecha_Fin,
+            this.Prioridad,
+            this.Ultima_Modificacion,
+            this.id});
+            this.dgvTareas.Location = new System.Drawing.Point(243, 34);
+            this.dgvTareas.Name = "dgvTareas";
+            this.dgvTareas.RowHeadersWidth = 51;
+            this.dgvTareas.RowTemplate.Height = 24;
+            this.dgvTareas.Size = new System.Drawing.Size(680, 234);
+            this.dgvTareas.TabIndex = 4;
+            this.dgvTareas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvTareas.SelectionChanged += new System.EventHandler(this.dgvTareas_SelectionChanged);
             // 
-            // BtEtiquetar
+            // BtCompletar
             // 
-            this.BtEtiquetar.Enabled = false;
-            this.BtEtiquetar.Location = new System.Drawing.Point(111, 3);
-            this.BtEtiquetar.Name = "BtEtiquetar";
-            this.BtEtiquetar.Size = new System.Drawing.Size(102, 27);
-            this.BtEtiquetar.TabIndex = 4;
-            this.BtEtiquetar.Text = "Etiquetar";
-            this.BtEtiquetar.UseVisualStyleBackColor = true;
+            this.BtCompletar.Location = new System.Drawing.Point(243, 314);
+            this.BtCompletar.Name = "BtCompletar";
+            this.BtCompletar.Size = new System.Drawing.Size(227, 31);
+            this.BtCompletar.TabIndex = 5;
+            this.BtCompletar.Text = "Marcar como completado";
+            this.BtCompletar.UseVisualStyleBackColor = true;
+            this.BtCompletar.Click += new System.EventHandler(this.BtCompletar_Click);
             // 
-            // BtBorrar
+            // IdTarea
             // 
-            this.BtBorrar.Enabled = false;
-            this.BtBorrar.Location = new System.Drawing.Point(475, 3);
-            this.BtBorrar.Name = "BtBorrar";
-            this.BtBorrar.Size = new System.Drawing.Size(102, 27);
-            this.BtBorrar.TabIndex = 5;
-            this.BtBorrar.Text = "Borrar";
-            this.BtBorrar.UseVisualStyleBackColor = true;
+            this.IdTarea.AutoSize = true;
+            this.IdTarea.Location = new System.Drawing.Point(625, 382);
+            this.IdTarea.Name = "IdTarea";
+            this.IdTarea.Size = new System.Drawing.Size(0, 16);
+            this.IdTarea.TabIndex = 6;
             // 
-            // panel2
+            // Titulo
             // 
-            this.panel2.Controls.Add(this.BtFilter);
-            this.panel2.Controls.Add(this.BtBorrar);
-            this.panel2.Controls.Add(this.BtEtiquetar);
-            this.panel2.Location = new System.Drawing.Point(206, 414);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(593, 36);
-            this.panel2.TabIndex = 6;
+            this.Titulo.HeaderText = "Titulo";
+            this.Titulo.MinimumWidth = 6;
+            this.Titulo.Name = "Titulo";
+            this.Titulo.Width = 125;
             // 
-            // BtConfig
+            // Estado
             // 
-            this.BtConfig.BackgroundImage = global::Hackaton_Frontasks.Properties.Resources.setting_2;
-            this.BtConfig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtConfig.Enabled = false;
-            this.BtConfig.FlatAppearance.BorderSize = 0;
-            this.BtConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtConfig.Location = new System.Drawing.Point(675, 9);
-            this.BtConfig.Name = "BtConfig";
-            this.BtConfig.Size = new System.Drawing.Size(32, 32);
-            this.BtConfig.TabIndex = 9;
-            this.BtConfig.UseVisualStyleBackColor = true;
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.Width = 125;
             // 
-            // BtTema
+            // Fecha_Fin
             // 
-            this.BtTema.BackgroundImage = global::Hackaton_Frontasks.Properties.Resources.sun_1;
-            this.BtTema.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtTema.FlatAppearance.BorderSize = 0;
-            this.BtTema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtTema.Location = new System.Drawing.Point(713, 9);
-            this.BtTema.Name = "BtTema";
-            this.BtTema.Size = new System.Drawing.Size(32, 32);
-            this.BtTema.TabIndex = 8;
-            this.BtTema.UseVisualStyleBackColor = true;
-            this.BtTema.Click += new System.EventHandler(this.BtTema_Click);
+            this.Fecha_Fin.HeaderText = "Fecha_fin";
+            this.Fecha_Fin.MinimumWidth = 6;
+            this.Fecha_Fin.Name = "Fecha_Fin";
+            this.Fecha_Fin.Width = 125;
             // 
-            // BtCerrarSesion
+            // Prioridad
             // 
-            this.BtCerrarSesion.BackgroundImage = global::Hackaton_Frontasks.Properties.Resources.logout_1;
-            this.BtCerrarSesion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtCerrarSesion.FlatAppearance.BorderSize = 0;
-            this.BtCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtCerrarSesion.Location = new System.Drawing.Point(751, 9);
-            this.BtCerrarSesion.Name = "BtCerrarSesion";
-            this.BtCerrarSesion.Size = new System.Drawing.Size(32, 32);
-            this.BtCerrarSesion.TabIndex = 7;
-            this.BtCerrarSesion.UseVisualStyleBackColor = true;
+            this.Prioridad.HeaderText = "Prioridad";
+            this.Prioridad.MinimumWidth = 6;
+            this.Prioridad.Name = "Prioridad";
+            this.Prioridad.Width = 125;
             // 
-            // TfBusqueda
+            // Ultima_Modificacion
             // 
-            this.TfBusqueda.Location = new System.Drawing.Point(375, 12);
-            this.TfBusqueda.Name = "TfBusqueda";
-            this.TfBusqueda.Size = new System.Drawing.Size(270, 22);
-            this.TfBusqueda.TabIndex = 10;
-            this.TfBusqueda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Ultima_Modificacion.HeaderText = "FechaModificacion";
+            this.Ultima_Modificacion.MinimumWidth = 6;
+            this.Ultima_Modificacion.Name = "Ultima_Modificacion";
+            this.Ultima_Modificacion.Width = 125;
             // 
-            // LbTituloLista
+            // id
             // 
-            this.LbTituloLista.AutoSize = true;
-            this.LbTituloLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.LbTituloLista.Location = new System.Drawing.Point(211, 9);
-            this.LbTituloLista.Name = "LbTituloLista";
-            this.LbTituloLista.Size = new System.Drawing.Size(139, 25);
-            this.LbTituloLista.TabIndex = 11;
-            this.LbTituloLista.Text = "Lista de tareas";
+            this.id.HeaderText = "id";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.Visible = false;
+            this.id.Width = 125;
             // 
             // UserDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.LbTituloLista);
-            this.Controls.Add(this.TfBusqueda);
-            this.Controls.Add(this.BtConfig);
-            this.Controls.Add(this.BtTema);
-            this.Controls.Add(this.BtCerrarSesion);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(980, 450);
+            this.Controls.Add(this.IdTarea);
+            this.Controls.Add(this.BtCompletar);
+            this.Controls.Add(this.dgvTareas);
+            this.Controls.Add(this.idUsuario);
             this.Controls.Add(this.panel1);
             this.Name = "UserDashboard";
             this.Text = "UserDashboard";
             this.Load += new System.EventHandler(this.UserDashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
             this.PerformLayout();
@@ -293,15 +277,15 @@ namespace Hackaton_Frontasks.Interfaz.Usuario
         private System.Windows.Forms.Button BtListPendientes;
         private System.Windows.Forms.Button BtListaCompletadas;
         private System.Windows.Forms.Button BtTareasAtrasadas;
-        private System.Windows.Forms.Button BtFilter;
-        private System.Windows.Forms.Button BtEtiquetar;
-        private System.Windows.Forms.Button BtBorrar;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button BtCerrarSesion;
-        private System.Windows.Forms.Button BtTema;
-        private System.Windows.Forms.Button BtConfig;
-        private System.Windows.Forms.TextBox TfBusqueda;
-        private System.Windows.Forms.Label LbTituloLista;
-        private object idUsuario;
+        public System.Windows.Forms.Label idUsuario;
+        private System.Windows.Forms.DataGridView dgvTareas;
+        private System.Windows.Forms.Button BtCompletar;
+        private System.Windows.Forms.Label IdTarea;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_Fin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Prioridad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ultima_Modificacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
     }
 }

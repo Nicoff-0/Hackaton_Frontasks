@@ -77,11 +77,29 @@
     <Compile Include="Interfaz\Registro.Designer.cs">
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\Usuario\Atrasadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Usuario\Atrasadas.Designer.cs">
+      <DependentUpon>Atrasadas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\Usuario\Completado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Usuario\Completado.Designer.cs">
+      <DependentUpon>Completado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\Usuario\HistoryTask.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Interfaz\Usuario\HistoryTask.Designer.cs">
       <DependentUpon>HistoryTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\Usuario\Pendientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Usuario\Pendientes.Designer.cs">
+      <DependentUpon>Pendientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\Usuario\UserDashboard.cs">
       <SubType>Form</SubType>
@@ -103,8 +121,17 @@
     <EmbeddedResource Include="Interfaz\Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Usuario\Atrasadas.resx">
+      <DependentUpon>Atrasadas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Usuario\Completado.resx">
+      <DependentUpon>Completado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Usuario\HistoryTask.resx">
       <DependentUpon>HistoryTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Usuario\Pendientes.resx">
+      <DependentUpon>Pendientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Usuario\UserDashboard.resx">
       <DependentUpon>UserDashboard.cs</DependentUpon>

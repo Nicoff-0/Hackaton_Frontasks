@@ -37,7 +37,17 @@
             this.BtListTareas = new System.Windows.Forms.Button();
             this.t = new System.Windows.Forms.Label();
             this.idUsuario = new System.Windows.Forms.Label();
+            this.dgvTareas = new System.Windows.Forms.DataGridView();
+            this.BtCompletar = new System.Windows.Forms.Button();
+            this.IdTarea = new System.Windows.Forms.Label();
+            this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha_Fin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prioridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ultima_Modificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -74,6 +84,7 @@
             this.BtTareasAtrasadas.TabIndex = 5;
             this.BtTareasAtrasadas.Text = "Atrasadas";
             this.BtTareasAtrasadas.UseVisualStyleBackColor = true;
+            this.BtTareasAtrasadas.Click += new System.EventHandler(this.BtTareasAtrasadas_Click);
             // 
             // BtListPendientes
             // 
@@ -84,6 +95,7 @@
             this.BtListPendientes.TabIndex = 4;
             this.BtListPendientes.Text = "Pendientes";
             this.BtListPendientes.UseVisualStyleBackColor = true;
+            this.BtListPendientes.Click += new System.EventHandler(this.BtListPendientes_Click);
             // 
             // BtNuevaTarea
             // 
@@ -140,17 +152,102 @@
             this.idUsuario.Size = new System.Drawing.Size(0, 16);
             this.idUsuario.TabIndex = 3;
             // 
+            // dgvTareas
+            // 
+            this.dgvTareas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTareas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Titulo,
+            this.Estado,
+            this.Fecha_Fin,
+            this.Prioridad,
+            this.Ultima_Modificacion,
+            this.id});
+            this.dgvTareas.Location = new System.Drawing.Point(243, 34);
+            this.dgvTareas.Name = "dgvTareas";
+            this.dgvTareas.RowHeadersWidth = 51;
+            this.dgvTareas.RowTemplate.Height = 24;
+            this.dgvTareas.Size = new System.Drawing.Size(680, 234);
+            this.dgvTareas.TabIndex = 4;
+            this.dgvTareas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvTareas.SelectionChanged += new System.EventHandler(this.dgvTareas_SelectionChanged);
+            // 
+            // BtCompletar
+            // 
+            this.BtCompletar.Location = new System.Drawing.Point(243, 314);
+            this.BtCompletar.Name = "BtCompletar";
+            this.BtCompletar.Size = new System.Drawing.Size(227, 31);
+            this.BtCompletar.TabIndex = 5;
+            this.BtCompletar.Text = "Marcar como completado";
+            this.BtCompletar.UseVisualStyleBackColor = true;
+            this.BtCompletar.Click += new System.EventHandler(this.BtCompletar_Click);
+            // 
+            // IdTarea
+            // 
+            this.IdTarea.AutoSize = true;
+            this.IdTarea.Location = new System.Drawing.Point(625, 382);
+            this.IdTarea.Name = "IdTarea";
+            this.IdTarea.Size = new System.Drawing.Size(0, 16);
+            this.IdTarea.TabIndex = 6;
+            // 
+            // Titulo
+            // 
+            this.Titulo.HeaderText = "Titulo";
+            this.Titulo.MinimumWidth = 6;
+            this.Titulo.Name = "Titulo";
+            this.Titulo.Width = 125;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.Width = 125;
+            // 
+            // Fecha_Fin
+            // 
+            this.Fecha_Fin.HeaderText = "Fecha_fin";
+            this.Fecha_Fin.MinimumWidth = 6;
+            this.Fecha_Fin.Name = "Fecha_Fin";
+            this.Fecha_Fin.Width = 125;
+            // 
+            // Prioridad
+            // 
+            this.Prioridad.HeaderText = "Prioridad";
+            this.Prioridad.MinimumWidth = 6;
+            this.Prioridad.Name = "Prioridad";
+            this.Prioridad.Width = 125;
+            // 
+            // Ultima_Modificacion
+            // 
+            this.Ultima_Modificacion.HeaderText = "FechaModificacion";
+            this.Ultima_Modificacion.MinimumWidth = 6;
+            this.Ultima_Modificacion.Name = "Ultima_Modificacion";
+            this.Ultima_Modificacion.Width = 125;
+            // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.Visible = false;
+            this.id.Width = 125;
+            // 
             // UserDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(980, 450);
+            this.Controls.Add(this.IdTarea);
+            this.Controls.Add(this.BtCompletar);
+            this.Controls.Add(this.dgvTareas);
             this.Controls.Add(this.idUsuario);
             this.Controls.Add(this.panel1);
             this.Name = "UserDashboard";
             this.Text = "UserDashboard";
+            this.Load += new System.EventHandler(this.UserDashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,5 +264,14 @@
         private System.Windows.Forms.Button BtListaCompletadas;
         private System.Windows.Forms.Button BtTareasAtrasadas;
         public System.Windows.Forms.Label idUsuario;
+        private System.Windows.Forms.DataGridView dgvTareas;
+        private System.Windows.Forms.Button BtCompletar;
+        private System.Windows.Forms.Label IdTarea;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_Fin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Prioridad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ultima_Modificacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
     }
 }

@@ -36,7 +36,6 @@ namespace Hackaton_Frontasks.Interfaz.Usuario
             this.BtListPendientes = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.BtListTareas = new System.Windows.Forms.Button();
-            this.t = new System.Windows.Forms.Label();
             this.idUsuario = new System.Windows.Forms.Label();
             this.dgvTareas = new System.Windows.Forms.DataGridView();
             this.BtCompletar = new System.Windows.Forms.Button();
@@ -47,6 +46,9 @@ namespace Hackaton_Frontasks.Interfaz.Usuario
             this.Prioridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ultima_Modificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtTitulo = new System.Windows.Forms.Label();
+            this.LbSubtitulo = new System.Windows.Forms.Label();
+            this.BtNuevaTarea = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).BeginInit();
             this.SuspendLayout();

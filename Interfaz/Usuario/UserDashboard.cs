@@ -84,8 +84,14 @@ namespace Hackaton_Frontasks.Interfaz.Usuario
             if (dgvTareas.SelectedRows.Count > 0)
             {
                 IdTarea.Text = dgvTareas.CurrentRow.Cells[5].Value.ToString();
-
+                TbTitulo.Text = dgvTareas.CurrentRow.Cells[0].Value.ToString();
+                TbDescripcion.Text = dgvTareas.CurrentRow.Cells[1].Value.ToString();
             }
+
+
+
+
+
 
         }
 
@@ -127,6 +133,43 @@ namespace Hackaton_Frontasks.Interfaz.Usuario
             cmd.ExecuteNonQuery();
 
             updatedgv();
+        }
+
+        private void BtEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult answer = MessageBox.Show("Seguro que desea eliminar esta tarea :( ? ", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (answer == DialogResult.Yes)
+            {
+                cn = new cConexion();
+                SqlCommand cmd = new SqlCommand("delete from tblTareas where id_tarea =  '" + IdTarea.Text + "' ", cn.AbrirConexion());
+                cmd.ExecuteNonQuery();
+                 MessageBox.Show("Tarea eliminado");
+
+            }
+            
+
+            
+            updatedgv();
+        }
+
+        private void BtModificar_Click(object sender, EventArgs e)
+        {
+
+            DialogResult answer = MessageBox.Show("Seguro que desea modificar la informacion de esta tarea :( ? ", "Atencion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (answer == DialogResult.Yes)
+            {
+                cn = new cConexion();
+                cmd = new SqlCommand("update tblTareas set titulo= '" + TbTitulo.Text + "', descripcion='" + TbDescripcion.Text +  "' where id_tarea= '" + IdTarea.Text + "'", cn.AbrirConexion());
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Informacion de la tarea modificada");
+            }
+            updatedgv();
+
+
+
         }
     }
 }

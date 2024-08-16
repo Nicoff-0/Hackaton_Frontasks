@@ -46,6 +46,12 @@
             this.Prioridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ultima_Modificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtEliminar = new System.Windows.Forms.Button();
+            this.LTitulo = new System.Windows.Forms.Label();
+            this.LDescripcion = new System.Windows.Forms.Label();
+            this.TbTitulo = new System.Windows.Forms.TextBox();
+            this.TbDescripcion = new System.Windows.Forms.TextBox();
+            this.BtModificar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).BeginInit();
             this.SuspendLayout();
@@ -173,7 +179,7 @@
             // 
             // BtCompletar
             // 
-            this.BtCompletar.Location = new System.Drawing.Point(243, 314);
+            this.BtCompletar.Location = new System.Drawing.Point(243, 274);
             this.BtCompletar.Name = "BtCompletar";
             this.BtCompletar.Size = new System.Drawing.Size(227, 31);
             this.BtCompletar.TabIndex = 5;
@@ -232,11 +238,69 @@
             this.id.Visible = false;
             this.id.Width = 125;
             // 
+            // BtEliminar
+            // 
+            this.BtEliminar.Location = new System.Drawing.Point(490, 274);
+            this.BtEliminar.Name = "BtEliminar";
+            this.BtEliminar.Size = new System.Drawing.Size(154, 31);
+            this.BtEliminar.TabIndex = 7;
+            this.BtEliminar.Text = "Eliminar tarea";
+            this.BtEliminar.UseVisualStyleBackColor = true;
+            this.BtEliminar.Click += new System.EventHandler(this.BtEliminar_Click);
+            // 
+            // LTitulo
+            // 
+            this.LTitulo.AutoSize = true;
+            this.LTitulo.Location = new System.Drawing.Point(243, 327);
+            this.LTitulo.Name = "LTitulo";
+            this.LTitulo.Size = new System.Drawing.Size(40, 16);
+            this.LTitulo.TabIndex = 8;
+            this.LTitulo.Text = "Titulo";
+            // 
+            // LDescripcion
+            // 
+            this.LDescripcion.AutoSize = true;
+            this.LDescripcion.Location = new System.Drawing.Point(246, 358);
+            this.LDescripcion.Name = "LDescripcion";
+            this.LDescripcion.Size = new System.Drawing.Size(79, 16);
+            this.LDescripcion.TabIndex = 9;
+            this.LDescripcion.Text = "Descripcion";
+            // 
+            // TbTitulo
+            // 
+            this.TbTitulo.Location = new System.Drawing.Point(357, 321);
+            this.TbTitulo.Name = "TbTitulo";
+            this.TbTitulo.Size = new System.Drawing.Size(100, 22);
+            this.TbTitulo.TabIndex = 10;
+            // 
+            // TbDescripcion
+            // 
+            this.TbDescripcion.Location = new System.Drawing.Point(357, 351);
+            this.TbDescripcion.Name = "TbDescripcion";
+            this.TbDescripcion.Size = new System.Drawing.Size(100, 22);
+            this.TbDescripcion.TabIndex = 11;
+            // 
+            // BtModificar
+            // 
+            this.BtModificar.Location = new System.Drawing.Point(357, 382);
+            this.BtModificar.Name = "BtModificar";
+            this.BtModificar.Size = new System.Drawing.Size(75, 23);
+            this.BtModificar.TabIndex = 12;
+            this.BtModificar.Text = "Modificar";
+            this.BtModificar.UseVisualStyleBackColor = true;
+            this.BtModificar.Click += new System.EventHandler(this.BtModificar_Click);
+            // 
             // UserDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(980, 450);
+            this.Controls.Add(this.BtModificar);
+            this.Controls.Add(this.TbDescripcion);
+            this.Controls.Add(this.TbTitulo);
+            this.Controls.Add(this.LDescripcion);
+            this.Controls.Add(this.LTitulo);
+            this.Controls.Add(this.BtEliminar);
             this.Controls.Add(this.IdTarea);
             this.Controls.Add(this.BtCompletar);
             this.Controls.Add(this.dgvTareas);
@@ -273,5 +337,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Prioridad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ultima_Modificacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.Button BtEliminar;
+        private System.Windows.Forms.Label LTitulo;
+        private System.Windows.Forms.Label LDescripcion;
+        private System.Windows.Forms.TextBox TbTitulo;
+        private System.Windows.Forms.TextBox TbDescripcion;
+        private System.Windows.Forms.Button BtModificar;
     }
 }

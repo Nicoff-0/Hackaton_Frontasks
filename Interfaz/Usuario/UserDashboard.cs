@@ -171,5 +171,43 @@ namespace Hackaton_Frontasks.Interfaz.Usuario
 
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            cn = new cConexion();
+            SqlCommand cmd = new SqlCommand("select * from tblTareas where titulo =  '" + TbBuscaTitulo.Text +  "' ", cn.AbrirConexion());
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dgvTareas.Rows.Clear();
+
+            if (dt.Rows.Count != 0)
+            {
+
+
+                int n = 0;
+                n = dt.Rows.Count;
+                dgvTareas.Rows.Add(n);
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    dgvTareas.Rows[i].Cells[0].Value = dt.Rows[i][1].ToString();
+                    dgvTareas.Rows[i].Cells[1].Value = dt.Rows[i][3].ToString();
+                    dgvTareas.Rows[i].Cells[2].Value = dt.Rows[i][4].ToString();
+                    dgvTareas.Rows[i].Cells[3].Value = dt.Rows[i][5].ToString();
+                    dgvTareas.Rows[i].Cells[4].Value = dt.Rows[i][6].ToString();
+                    dgvTareas.Rows[i].Cells[5].Value = dt.Rows[i][0].ToString();
+
+                }
+            }
+
+
+
+
+        }
+
+        private void BtTodas_Click(object sender, EventArgs e)
+        {
+            updatedgv();
+        }
     }
 }

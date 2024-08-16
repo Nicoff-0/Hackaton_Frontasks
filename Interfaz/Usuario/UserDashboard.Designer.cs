@@ -38,20 +38,24 @@
             this.t = new System.Windows.Forms.Label();
             this.idUsuario = new System.Windows.Forms.Label();
             this.dgvTareas = new System.Windows.Forms.DataGridView();
-            this.BtCompletar = new System.Windows.Forms.Button();
-            this.IdTarea = new System.Windows.Forms.Label();
             this.Titulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha_Fin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Prioridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ultima_Modificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtCompletar = new System.Windows.Forms.Button();
+            this.IdTarea = new System.Windows.Forms.Label();
             this.BtEliminar = new System.Windows.Forms.Button();
             this.LTitulo = new System.Windows.Forms.Label();
             this.LDescripcion = new System.Windows.Forms.Label();
             this.TbTitulo = new System.Windows.Forms.TextBox();
             this.TbDescripcion = new System.Windows.Forms.TextBox();
             this.BtModificar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.TbBuscaTitulo = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.BtTodas = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTareas)).BeginInit();
             this.SuspendLayout();
@@ -67,13 +71,13 @@
             this.panel1.Controls.Add(this.t);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(205, 450);
+            this.panel1.Size = new System.Drawing.Size(205, 566);
             this.panel1.TabIndex = 2;
             // 
             // BtListaCompletadas
             // 
             this.BtListaCompletadas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.BtListaCompletadas.Location = new System.Drawing.Point(3, 300);
+            this.BtListaCompletadas.Location = new System.Drawing.Point(-1, 300);
             this.BtListaCompletadas.Name = "BtListaCompletadas";
             this.BtListaCompletadas.Size = new System.Drawing.Size(203, 44);
             this.BtListaCompletadas.TabIndex = 6;
@@ -153,7 +157,7 @@
             // idUsuario
             // 
             this.idUsuario.AutoSize = true;
-            this.idUsuario.Location = new System.Drawing.Point(225, 422);
+            this.idUsuario.Location = new System.Drawing.Point(231, 523);
             this.idUsuario.Name = "idUsuario";
             this.idUsuario.Size = new System.Drawing.Size(0, 16);
             this.idUsuario.TabIndex = 3;
@@ -168,7 +172,7 @@
             this.Prioridad,
             this.Ultima_Modificacion,
             this.id});
-            this.dgvTareas.Location = new System.Drawing.Point(243, 34);
+            this.dgvTareas.Location = new System.Drawing.Point(249, 135);
             this.dgvTareas.Name = "dgvTareas";
             this.dgvTareas.RowHeadersWidth = 51;
             this.dgvTareas.RowTemplate.Height = 24;
@@ -176,24 +180,6 @@
             this.dgvTareas.TabIndex = 4;
             this.dgvTareas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgvTareas.SelectionChanged += new System.EventHandler(this.dgvTareas_SelectionChanged);
-            // 
-            // BtCompletar
-            // 
-            this.BtCompletar.Location = new System.Drawing.Point(243, 274);
-            this.BtCompletar.Name = "BtCompletar";
-            this.BtCompletar.Size = new System.Drawing.Size(227, 31);
-            this.BtCompletar.TabIndex = 5;
-            this.BtCompletar.Text = "Marcar como completado";
-            this.BtCompletar.UseVisualStyleBackColor = true;
-            this.BtCompletar.Click += new System.EventHandler(this.BtCompletar_Click);
-            // 
-            // IdTarea
-            // 
-            this.IdTarea.AutoSize = true;
-            this.IdTarea.Location = new System.Drawing.Point(625, 382);
-            this.IdTarea.Name = "IdTarea";
-            this.IdTarea.Size = new System.Drawing.Size(0, 16);
-            this.IdTarea.TabIndex = 6;
             // 
             // Titulo
             // 
@@ -238,9 +224,27 @@
             this.id.Visible = false;
             this.id.Width = 125;
             // 
+            // BtCompletar
+            // 
+            this.BtCompletar.Location = new System.Drawing.Point(249, 375);
+            this.BtCompletar.Name = "BtCompletar";
+            this.BtCompletar.Size = new System.Drawing.Size(227, 31);
+            this.BtCompletar.TabIndex = 5;
+            this.BtCompletar.Text = "Marcar como completado";
+            this.BtCompletar.UseVisualStyleBackColor = true;
+            this.BtCompletar.Click += new System.EventHandler(this.BtCompletar_Click);
+            // 
+            // IdTarea
+            // 
+            this.IdTarea.AutoSize = true;
+            this.IdTarea.Location = new System.Drawing.Point(631, 483);
+            this.IdTarea.Name = "IdTarea";
+            this.IdTarea.Size = new System.Drawing.Size(0, 16);
+            this.IdTarea.TabIndex = 6;
+            // 
             // BtEliminar
             // 
-            this.BtEliminar.Location = new System.Drawing.Point(490, 274);
+            this.BtEliminar.Location = new System.Drawing.Point(496, 375);
             this.BtEliminar.Name = "BtEliminar";
             this.BtEliminar.Size = new System.Drawing.Size(154, 31);
             this.BtEliminar.TabIndex = 7;
@@ -251,7 +255,7 @@
             // LTitulo
             // 
             this.LTitulo.AutoSize = true;
-            this.LTitulo.Location = new System.Drawing.Point(243, 327);
+            this.LTitulo.Location = new System.Drawing.Point(249, 428);
             this.LTitulo.Name = "LTitulo";
             this.LTitulo.Size = new System.Drawing.Size(40, 16);
             this.LTitulo.TabIndex = 8;
@@ -260,7 +264,7 @@
             // LDescripcion
             // 
             this.LDescripcion.AutoSize = true;
-            this.LDescripcion.Location = new System.Drawing.Point(246, 358);
+            this.LDescripcion.Location = new System.Drawing.Point(252, 459);
             this.LDescripcion.Name = "LDescripcion";
             this.LDescripcion.Size = new System.Drawing.Size(79, 16);
             this.LDescripcion.TabIndex = 9;
@@ -268,21 +272,21 @@
             // 
             // TbTitulo
             // 
-            this.TbTitulo.Location = new System.Drawing.Point(357, 321);
+            this.TbTitulo.Location = new System.Drawing.Point(363, 422);
             this.TbTitulo.Name = "TbTitulo";
             this.TbTitulo.Size = new System.Drawing.Size(100, 22);
             this.TbTitulo.TabIndex = 10;
             // 
             // TbDescripcion
             // 
-            this.TbDescripcion.Location = new System.Drawing.Point(357, 351);
+            this.TbDescripcion.Location = new System.Drawing.Point(363, 452);
             this.TbDescripcion.Name = "TbDescripcion";
             this.TbDescripcion.Size = new System.Drawing.Size(100, 22);
             this.TbDescripcion.TabIndex = 11;
             // 
             // BtModificar
             // 
-            this.BtModificar.Location = new System.Drawing.Point(357, 382);
+            this.BtModificar.Location = new System.Drawing.Point(363, 483);
             this.BtModificar.Name = "BtModificar";
             this.BtModificar.Size = new System.Drawing.Size(75, 23);
             this.BtModificar.TabIndex = 12;
@@ -290,11 +294,52 @@
             this.BtModificar.UseVisualStyleBackColor = true;
             this.BtModificar.Click += new System.EventHandler(this.BtModificar_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(223, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(122, 16);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Busqueda por titulo";
+            // 
+            // TbBuscaTitulo
+            // 
+            this.TbBuscaTitulo.Location = new System.Drawing.Point(363, 12);
+            this.TbBuscaTitulo.Name = "TbBuscaTitulo";
+            this.TbBuscaTitulo.Size = new System.Drawing.Size(184, 22);
+            this.TbBuscaTitulo.TabIndex = 14;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(567, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Buscar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // BtTodas
+            // 
+            this.BtTodas.Location = new System.Drawing.Point(669, 12);
+            this.BtTodas.Name = "BtTodas";
+            this.BtTodas.Size = new System.Drawing.Size(138, 23);
+            this.BtTodas.TabIndex = 16;
+            this.BtTodas.Text = "Mostrar todas las tareas";
+            this.BtTodas.UseVisualStyleBackColor = true;
+            this.BtTodas.Click += new System.EventHandler(this.BtTodas_Click);
+            // 
             // UserDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(218)))), ((int)(((byte)(218)))));
+            this.ClientSize = new System.Drawing.Size(980, 567);
+            this.Controls.Add(this.BtTodas);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.TbBuscaTitulo);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.BtModificar);
             this.Controls.Add(this.TbDescripcion);
             this.Controls.Add(this.TbTitulo);
@@ -343,5 +388,9 @@
         private System.Windows.Forms.TextBox TbTitulo;
         private System.Windows.Forms.TextBox TbDescripcion;
         private System.Windows.Forms.Button BtModificar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox TbBuscaTitulo;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtTodas;
     }
 }

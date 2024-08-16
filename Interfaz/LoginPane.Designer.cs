@@ -43,14 +43,14 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(776, 30);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "INGRESAR";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // TbPassword
             // 
-            this.TbPassword.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbPassword.Location = new System.Drawing.Point(393, 342);
+            this.TbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbPassword.Location = new System.Drawing.Point(263, 327);
             this.TbPassword.Name = "TbPassword";
             this.TbPassword.Size = new System.Drawing.Size(467, 30);
             this.TbPassword.TabIndex = 1;
@@ -77,7 +77,7 @@
             // LinkRegistro
             // 
             this.LinkRegistro.AutoSize = true;
-            this.LinkRegistro.Location = new System.Drawing.Point(461, 459);
+            this.LinkRegistro.Location = new System.Drawing.Point(411, 443);
             this.LinkRegistro.Name = "LinkRegistro";
             this.LinkRegistro.Size = new System.Drawing.Size(173, 16);
             this.LinkRegistro.TabIndex = 4;
